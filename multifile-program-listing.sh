@@ -3,9 +3,9 @@
 # ======================= EDIT THIS ===========================================
 # page configuration
 #  content width in columns
-width=80
+width=130
 #  form length in lines (lines per page)
-formlen=65  # 241mm x 11" standard form continuous paper
+formlen=64  # 241mm x 11" standard form continuous paper
 #  left margin (for line numbers + 1 space)
 leftmar=5   # enough for 9999
 #  note: real print width is leftmar + width
@@ -108,7 +108,7 @@ do
         if [[ "$plinei" -eq 65 ]]; then
             let plinei=1
             let pagei=pagei+1
-            echo
+            #echo
             printf "\f"
         fi
 
@@ -140,6 +140,9 @@ do
         let flinei=flinei+1
     done < $file
 
+    #echo
+    printf "\f"
+    
     let pagei=pagei+1
 done
 
